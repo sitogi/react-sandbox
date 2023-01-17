@@ -35,6 +35,10 @@ module.exports = {
       'newlines-between': 'always'
     }],
     'import/no-unresolved': 'off' // REVISIT: ~/App などのパスを解析させる方法がわからなかった
-
-  }
+  },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  },
 };
