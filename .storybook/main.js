@@ -15,6 +15,11 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  refs: {
+    '@chakra-ui/react': {
+      disable: true
+    }
+  },
   viteFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
