@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ChakraProvider } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { BeforeAfterByFlex } from '~/components/BeforeAfterByFlex';
@@ -17,7 +18,11 @@ export default {
   },
 } as ComponentMeta<typeof BeforeAfterByFlex>;
 
-const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => <BeforeAfterByFlex {...args} />;
+const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => (
+  <ChakraProvider>
+    <BeforeAfterByFlex {...args} />
+  </ChakraProvider>
+);
 
 export const Default = Template.bind({});
 Default.args = {
