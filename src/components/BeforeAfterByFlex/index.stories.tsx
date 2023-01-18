@@ -17,9 +17,7 @@ export default {
   },
 } as ComponentMeta<typeof BeforeAfterByFlex>;
 
-const Template: ComponentStory<typeof BeforeAfterByFlex> = ({ decorationGapPx }: { decorationGapPx?: number }) => (
-  <BeforeAfterByFlex decorationGapPx={decorationGapPx} />
-);
+const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => <BeforeAfterByFlex {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -29,4 +27,9 @@ Default.args = {
 export const Gap50 = Template.bind({});
 Gap50.args = {
   decorationGapPx: 50,
+};
+
+export const Gap100 = Template.bind({});
+Gap100.args = {
+  decorationGapPx: 100,
 };
