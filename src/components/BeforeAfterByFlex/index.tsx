@@ -31,7 +31,7 @@ interface Props {
 }
 
 // after (before) 疑似要素を position ではなく display:flex で調整する
-export const BeforeByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element => {
+export const BeforeAfterByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element => {
   return (
     <ScreenCenterPlaced>
       <VStack gap={10}>
