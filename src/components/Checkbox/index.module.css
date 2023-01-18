@@ -1,0 +1,16 @@
+* {
+  height: 4rem;
+  width: 4rem;
+}
+
+.pink {
+  accent-color: pink;
+}
+
+.green {
+  accent-color: yellowgreen;
+}
+
+.purple {
+  accent-color: mediumpurple;
+}
