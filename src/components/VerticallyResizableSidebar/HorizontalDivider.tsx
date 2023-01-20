@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 
 const divider = css`
+  align-items: center;
   background: gray;
   cursor: row-resize;
-  width: 100%;
-  user-select: none; /* ドラッグ中に他領域が選択されるのを抑制 */
   height: 6px;
+  justify-content: center;
+  user-select: none; /* ドラッグ中に他領域が選択されるのを抑制 */
+  width: 100%;
 
   &:hover,
   &.highlight {
@@ -41,13 +43,15 @@ export const HorizontalDivider = ({ onMouseDown }: Props): JSX.Element => {
   }, [isPressed, setIsPressed]);
 
   return (
-    <Box
+    <Flex
       css={divider}
       className={isPressed ? 'highlight' : ''}
       onMouseDown={() => {
         onMouseDown();
         setIsPressed(true);
       }}
-    />
+    >
+      <Box w="40px" h="10px" bg="red.300" position="absolute" rounded="md" />
+    </Flex>
   );
 };
