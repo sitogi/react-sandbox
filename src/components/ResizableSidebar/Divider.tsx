@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Box } from '@chakra-ui/react';
 import { css } from '@emotion/react';
