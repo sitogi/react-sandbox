@@ -41,10 +41,10 @@ export const VerticallyResizableSidebar = (): JSX.Element => {
   }, []);
 
   return (
-    <Flex w="300px" h="100vh" direction="column">
+    <Flex w="full" h="100vh" direction="column">
       <Grid
         placeContent="center"
-        w="100%"
+        w="full"
         bgColor="red.100"
         borderBottom="solid 4px"
         flex={`0 0 ${HEADER_SIZE}px`}
@@ -55,7 +55,7 @@ export const VerticallyResizableSidebar = (): JSX.Element => {
       <Grid
         ref={resizeTargetRef}
         h={`${ASIDE_INITIAL_SIZE}px`}
-        w="100%"
+        w="full"
         placeContent="center"
         fontSize="4xl"
         bg="green.100"
@@ -63,7 +63,7 @@ export const VerticallyResizableSidebar = (): JSX.Element => {
         Category A
       </Grid>
       <HorizontalDivider onMouseDown={() => (isMousePressedRef.current = true)} />
-      <Grid w="100%" flex="1 1" placeContent="center" fontSize="4xl" bg="purple.100">
+      <Grid w="full" flex="1 1" placeContent="center" fontSize="4xl" bg="yellow.100">
         Category B
       </Grid>
     </Flex>
