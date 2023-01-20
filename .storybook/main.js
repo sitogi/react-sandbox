@@ -6,7 +6,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    'storybook-dark-mode'
+    'storybook-dark-mode',
   ],
   framework: '@storybook/react',
   core: {
@@ -17,8 +17,8 @@ module.exports = {
   },
   refs: {
     '@chakra-ui/react': {
-      disable: true
-    }
+      disable: true,
+    },
   },
   viteFinal: async (config) => {
     config.resolve.alias = {
