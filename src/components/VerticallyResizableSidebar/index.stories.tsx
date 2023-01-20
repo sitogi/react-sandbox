@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof VerticallyResizableSidebar>;
 
 const Template: ComponentStory<typeof VerticallyResizableSidebar> = () => (
-  <Box w="300px">
+  <Box w="300px" h="100%">
     <VerticallyResizableSidebar />
   </Box>
 );
