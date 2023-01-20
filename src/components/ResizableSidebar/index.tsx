@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { Divider } from '~/components/ResizableSidebar/Divider';
+import { VerticalDivider } from '~/components/ResizableSidebar/VerticalDivider';
 
 const ASIDE_INITIAL_SIZE = 300;
 const ASIDE_MIN_SIZE = 150;
@@ -44,7 +44,7 @@ export const ResizableSidebar = (): JSX.Element => {
       <Grid ref={asideRef} h="100%" w={`${ASIDE_INITIAL_SIZE}px`} placeContent="center" fontSize="4xl" bg="green.100">
         Aside
       </Grid>
-      <Divider onMouseDown={() => (isMousePressedRef.current = true)} />
+      <VerticalDivider onMouseDown={() => (isMousePressedRef.current = true)} />
       <Grid h="100%" flex="1 1" placeContent="center" fontSize="4xl" bg="purple.100">
         Main
       </Grid>

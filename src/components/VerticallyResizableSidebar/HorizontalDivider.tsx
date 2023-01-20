@@ -5,10 +5,10 @@ import { css } from '@emotion/react';
 
 const divider = css`
   background: gray;
-  cursor: ew-resize;
-  height: 100%;
+  cursor: row-resize;
+  width: 100%;
   user-select: none; /* ドラッグ中に他領域が選択されるのを抑制 */
-  width: 6px;
+  height: 6px;
 
   &:hover,
   &.highlight {
@@ -21,7 +21,7 @@ interface Props {
   onMouseDown: () => void;
 }
 
-export const Divider = ({ onMouseDown }: Props): JSX.Element => {
+export const HorizontalDivider = ({ onMouseDown }: Props): JSX.Element => {
   // ドラッグ中にバーからカーソルがずれてもハイライトしたままにしておくために利用
   const [isPressed, setIsPressed] = useState(false);
 

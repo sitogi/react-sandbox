@@ -1,5 +1,10 @@
-import { ResizableSidebar } from '~/components/ResizableSidebar';
+import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
+import { VerticallyResizableSidebar } from '~/components/VerticallyResizableSidebar';
 
 export function App() {
-  return <ResizableSidebar />;
+  return (
+    <ScreenCenterPlaced>
+      <VerticallyResizableSidebar />
+    </ScreenCenterPlaced>
+  );
 }
