@@ -7,6 +7,11 @@ export default {
   component: BeforeAfterByFlex,
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/BeforeAfterByFlex/index.tsx',
+      },
+    },
   },
   argTypes: {
     decorationGapPx: {

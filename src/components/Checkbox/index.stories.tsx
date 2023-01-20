@@ -7,6 +7,11 @@ export default {
   component: Checkbox,
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/Checkbox/index.tsx',
+      },
+    },
   },
 } as ComponentMeta<typeof Checkbox>;
 

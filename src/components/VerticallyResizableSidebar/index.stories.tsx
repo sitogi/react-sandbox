@@ -8,6 +8,12 @@ export default {
   component: VerticallyResizableSidebar,
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'https://github.com/sitogi/react-sandbox/blob/main/src/components/VerticallyResizableSidebar/index.tsx',
+      },
+    },
   },
 } as ComponentMeta<typeof VerticallyResizableSidebar>;
 
