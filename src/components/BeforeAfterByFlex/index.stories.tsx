@@ -1,10 +1,6 @@
-import React from 'react';
-
-import { ChakraProvider } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { BeforeAfterByFlex } from '~/components/BeforeAfterByFlex';
-import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
 
 export default {
   title: 'Components/BeforeAfterByFlex',
@@ -19,13 +15,7 @@ export default {
   },
 } as ComponentMeta<typeof BeforeAfterByFlex>;
 
-const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => (
-  <ChakraProvider>
-    <ScreenCenterPlaced>
-      <BeforeAfterByFlex {...args} />
-    </ScreenCenterPlaced>
-  </ChakraProvider>
-);
+const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => <BeforeAfterByFlex {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
