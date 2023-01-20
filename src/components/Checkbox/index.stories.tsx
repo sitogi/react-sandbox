@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Checkbox } from '~/components/Checkbox';
+import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
 
 export default {
   title: 'Components/Checkbox',
@@ -15,7 +16,9 @@ export default {
 
 const Template: ComponentStory<typeof Checkbox> = (args) => (
   <ChakraProvider>
-    <Checkbox {...args} />
+    <ScreenCenterPlaced>
+      <Checkbox {...args} />
+    </ScreenCenterPlaced>
   </ChakraProvider>
 );
 

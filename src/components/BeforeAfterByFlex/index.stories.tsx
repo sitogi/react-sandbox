@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { BeforeAfterByFlex } from '~/components/BeforeAfterByFlex';
+import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
 
 export default {
   title: 'Components/BeforeAfterByFlex',
@@ -20,7 +21,9 @@ export default {
 
 const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => (
   <ChakraProvider>
-    <BeforeAfterByFlex {...args} />
+    <ScreenCenterPlaced>
+      <BeforeAfterByFlex {...args} />
+    </ScreenCenterPlaced>
   </ChakraProvider>
 );
 
