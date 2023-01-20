@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { VerticallyResizableSidebar } from '~/components/VerticallyResizableSidebar';
 
 export default {
-  title: 'Components/ResizableSidebar',
+  title: 'Components/VerticallyResizableSidebar',
   component: VerticallyResizableSidebar,
   parameters: {
     layout: 'fullscreen',
