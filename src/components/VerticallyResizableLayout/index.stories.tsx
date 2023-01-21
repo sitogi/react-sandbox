@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { VerticallyResizableLayout } from '~/components/VerticallyResizableLayout';
 
 export default {
-  title: 'Components/VerticallyResizableSidebar',
+  title: 'Components/VerticallyResizableLayout',
   component: VerticallyResizableLayout,
   parameters: {
     layout: 'fullscreen',
