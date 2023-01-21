@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { HorizontallyResizableLayout } from '~/components/HorizontallyResizableLayout';
-import { VerticallyResizableSidebar } from '~/components/VerticallyResizableSidebar';
+import { VerticallyResizableLayout } from '~/components/VerticallyResizableLayout';
 
 export default {
   title: 'Components/HorizontallyResizableLayout',
@@ -25,5 +25,5 @@ export const Default = Template.bind({});
 
 export const WithVerticallyResizableSidebar = Template.bind({});
 WithVerticallyResizableSidebar.args = {
-  aside: <VerticallyResizableSidebar />,
+  aside: <VerticallyResizableLayout />,
 };

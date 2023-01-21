@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { HorizontalDivider } from '~/components/VerticallyResizableSidebar/HorizontalDivider';
+import { HorizontalDivider } from '~/components/VerticallyResizableLayout/HorizontalDivider';
 
 const HEADER_SIZE = 80;
-const ASIDE_INITIAL_SIZE = 300;
-const ASIDE_MIN_SIZE = 200;
-const ASIDE_MAX_SIZE = 800;
+const FIRST_AREA_INITIAL_SIZE = 300;
+const FIRST_AREA_MIN_SIZE = 200;
+const FIRST_AREA_MAX_SIZE = 800;
 
-export const VerticallyResizableSidebar = (): JSX.Element => {
+export const VerticallyResizableLayout = (): JSX.Element => {
   const isMousePressedRef = useRef(false);
   const resizeTargetRef = useRef<HTMLDivElement>(null);
 
@@ -21,10 +21,10 @@ export const VerticallyResizableSidebar = (): JSX.Element => {
       const y = event.y;
 
       if (isMousePressedRef.current && resizeTargetRef.current !== null) {
-        if (y < ASIDE_MIN_SIZE) {
-          resizeTargetRef.current.style.height = `${ASIDE_MIN_SIZE - HEADER_SIZE}px`;
-        } else if (y > ASIDE_MAX_SIZE) {
-          resizeTargetRef.current.style.height = `${ASIDE_MAX_SIZE - HEADER_SIZE}px`;
+        if (y < FIRST_AREA_MIN_SIZE) {
+          resizeTargetRef.current.style.height = `${FIRST_AREA_MIN_SIZE - HEADER_SIZE}px`;
+        } else if (y > FIRST_AREA_MAX_SIZE) {
+          resizeTargetRef.current.style.height = `${FIRST_AREA_MAX_SIZE - HEADER_SIZE}px`;
         } else {
           resizeTargetRef.current.style.height = `${y - HEADER_SIZE}px`;
         }
@@ -54,7 +54,7 @@ export const VerticallyResizableSidebar = (): JSX.Element => {
       </Grid>
       <Grid
         ref={resizeTargetRef}
-        h={`${ASIDE_INITIAL_SIZE}px`}
+        h={`${FIRST_AREA_INITIAL_SIZE}px`}
         w="full"
         placeContent="center"
         fontSize="4xl"
