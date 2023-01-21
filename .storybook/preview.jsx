@@ -12,6 +12,14 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      order: [
+        'Components',
+        ['HorizontallyResizableLayout', 'VerticallyResizableSidebar', 'BeforeAfterByFlex', 'Checkbox'],
+      ],
+    },
+  },
 };
 
 export const decorators = [

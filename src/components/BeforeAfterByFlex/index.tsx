@@ -18,7 +18,6 @@ export const BeforeAfterByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element 
       gap={decorationGapPx}
       _before={decorationStyleObject}
       _after={decorationStyleObject}
-      w="100%"
     >
       Using flex to align before and after pseudo elements.
     </Box>
