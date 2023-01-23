@@ -26,17 +26,18 @@ interface Props {
 }
 
 export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defaultMain }: Props): JSX.Element => {
-  const isMousePressedRef = useRef(false);
+  const isPointerPressedRef = useRef(false);
   const asideRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const mouseUpListener = () => {
-      isMousePressedRef.current = false;
-    };
-    const mouseMoveListener = (event: MouseEvent) => {
+    // 各リスナーはリサイズ中にバーからカーソルがずれても効くようにドキュメント全体に張る
+    const pointerUpListener = () => (isPointerPressedRef.current = false);
+    document.addEventListener('pointerup', pointerUpListener);
+
+    const pointerMoveListener = (event: PointerEvent) => {
       const x = event.x;
 
-      if (isMousePressedRef.current && asideRef.current !== null) {
+      if (isPointerPressedRef.current && asideRef.current !== null) {
         if (x < ASIDE_MIN_SIZE) {
           asideRef.current.style.width = `${ASIDE_MIN_SIZE}px`;
         } else if (x > ASIDE_MAX_SIZE) {
@@ -46,13 +47,11 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
         }
       }
     };
-
-    document.addEventListener('mouseup', mouseUpListener);
-    document.addEventListener('mousemove', mouseMoveListener);
+    document.addEventListener('pointermove', pointerMoveListener);
 
     return () => {
-      document.removeEventListener('mouseup', mouseUpListener);
-      document.removeEventListener('mousemove', mouseMoveListener);
+      document.removeEventListener('pointerup', pointerUpListener);
+      document.removeEventListener('pointermove', pointerMoveListener);
     };
   }, []);
 
@@ -61,7 +60,7 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
       <Grid as="aside" ref={asideRef} h="100%" w={`${ASIDE_INITIAL_SIZE}px`}>
         {aside}
       </Grid>
-      <VerticalDivider onMouseDown={() => (isMousePressedRef.current = true)} />
+      <VerticalDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
       <Grid as="main" h="100%" flex="1 1">
         {main}
       </Grid>

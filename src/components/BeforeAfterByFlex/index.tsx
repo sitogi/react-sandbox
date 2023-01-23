@@ -9,6 +9,7 @@ const decorationStyleObject: SystemStyleObject = {
 interface Props {
   decorationGapPx?: number;
 }
+
 // after (before) 疑似要素を position ではなく display:flex で調整する
 export const BeforeAfterByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element => {
   return (
@@ -19,7 +20,7 @@ export const BeforeAfterByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element 
       _before={decorationStyleObject}
       _after={decorationStyleObject}
     >
-      Using flex to align before and after pseudo elements.
+      Using flex to align before and after pseudo-elements.
     </Box>
   );
 };
