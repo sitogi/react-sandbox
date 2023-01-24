@@ -21,7 +21,7 @@ export const parameters = {
           'VerticallyResizableLayout',
           'AccordionByDetailsTag',
           'BeforeAfterByFlex',
-          'Checkbox',
+          'CheckboxWithAccentColor',
         ],
       ],
     },
