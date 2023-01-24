@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { VerticalDivider } from '~/components/HorizontallyResizableLayout/VerticalDivider';
+import { ResizeBoundaryDivider } from '~/components/ResizeBoundaryDivider';
 
 const ASIDE_INITIAL_SIZE = 350;
 const ASIDE_MIN_SIZE = 200;
@@ -60,7 +60,7 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
       <Grid as="aside" ref={asideRef} h="100%" w={`${ASIDE_INITIAL_SIZE}px`}>
         {aside}
       </Grid>
-      <VerticalDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
+      <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
       <Grid as="main" h="100%" flex="1 1">
         {main}
       </Grid>

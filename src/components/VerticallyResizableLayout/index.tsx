@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { HorizontalDivider } from '~/components/VerticallyResizableLayout/HorizontalDivider';
+import { ResizeBoundaryDivider } from '~/components/ResizeBoundaryDivider';
 
 const HEADER_SIZE = 80;
 const FIRST_AREA_INITIAL_SIZE = 300;
@@ -61,7 +61,7 @@ export const VerticallyResizableLayout = (): JSX.Element => {
       >
         Category A
       </Grid>
-      <HorizontalDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
+      <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} isVertical />
       <Grid w="full" flex="1 1" placeContent="center" fontSize="4xl" bg="yellow.100">
         Category B
       </Grid>
