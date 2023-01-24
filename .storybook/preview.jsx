@@ -16,7 +16,13 @@ export const parameters = {
     storySort: {
       order: [
         'Components',
-        ['HorizontallyResizableLayout', 'VerticallyResizableLayout', 'MyAccordion', 'BeforeAfterByFlex', 'Checkbox'],
+        [
+          'HorizontallyResizableLayout',
+          'VerticallyResizableLayout',
+          'AccordionByDetailsTag',
+          'BeforeAfterByFlex',
+          'Checkbox',
+        ],
       ],
     },
   },
