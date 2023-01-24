@@ -1,5 +1,5 @@
+import { VerticallyResizableLayout } from '~/components/Resizable/VerticallyResizableLayout';
 import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
-import { VerticallyResizableLayout } from '~/components/VerticallyResizableLayout';
 
 export function App() {
   return (

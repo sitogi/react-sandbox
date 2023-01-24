@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { ResizeBoundaryDivider } from '~/components/ResizeBoundaryDivider';
+import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
 const ASIDE_INITIAL_SIZE = 350;
 const ASIDE_MIN_SIZE = 200;

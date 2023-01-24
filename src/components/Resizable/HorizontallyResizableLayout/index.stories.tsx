@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { HorizontallyResizableLayout } from '~/components/HorizontallyResizableLayout';
-import { VerticallyResizableLayout } from '~/components/VerticallyResizableLayout';
+import { HorizontallyResizableLayout } from '~/components/Resizable/HorizontallyResizableLayout/index';
+import { VerticallyResizableLayout } from '~/components/Resizable/VerticallyResizableLayout';
 
 export default {
   title: 'Components/HorizontallyResizableLayout',
@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'https://github.com/sitogi/react-sandbox/blob/main/src/components/HorizontallyResizableLayout/index.tsx',
+          'https://github.com/sitogi/react-sandbox/blob/main/src/components/Resizable/HorizontallyResizableLayout/index.tsx',
       },
     },
   },

@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'https://github.com/sitogi/react-sandbox/blob/main/src/components/VerticallyResizableSidebar/index.tsx',
+          'https://github.com/sitogi/react-sandbox/blob/main/src/components/Resizable/VerticallyResizableSidebar/index.tsx',
       },
     },
   },

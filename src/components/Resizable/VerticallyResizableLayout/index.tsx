@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { Flex, Grid } from '@chakra-ui/react';
 
-import { ResizeBoundaryDivider } from '~/components/ResizeBoundaryDivider';
+import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
 const HEADER_SIZE = 80;
 const FIRST_AREA_INITIAL_SIZE = 300;
