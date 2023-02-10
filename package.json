@@ -9,7 +9,8 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "npx simple-git-hooks || :"
+    "prepare": "npx simple-git-hooks || :",
+    "preinstall": "npx -y only-allow npm"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
@@ -69,6 +70,6 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "yarn run lint-staged"
+    "pre-commit": "npx lint-staged"
   }
 }
