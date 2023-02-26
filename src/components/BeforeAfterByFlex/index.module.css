@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container.gap-sm {
+  gap: 1rem;
+}
+
+.container.gap-md {
+  gap: 4rem;
+}
+
+.container.gap-lg {
+  gap: 8rem;
+}
+
+.container::before,
+.container::after {
+  content: "★★";
+  color: gold;
+  font-size: 1.5rem;
+}

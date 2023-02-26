@@ -1,26 +1,14 @@
-import { Box, SystemStyleObject } from '@chakra-ui/react';
-
-const decorationStyleObject: SystemStyleObject = {
-  content: '"★★"',
-  color: 'gold',
-  fontSize: '1.5rem',
-};
+import styles from './index.module.css';
 
 interface Props {
-  decorationGapPx?: number;
+  decorationGap?: 'gap-sm' | 'gap-md' | 'gap-lg';
 }
 
 // after (before) 疑似要素を position ではなく display:flex で調整する
-export const BeforeAfterByFlex = ({ decorationGapPx = 10 }: Props): JSX.Element => {
+export const BeforeAfterByFlex = ({ decorationGap = 'gap-md' }: Props): JSX.Element => {
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      gap={decorationGapPx}
-      _before={decorationStyleObject}
-      _after={decorationStyleObject}
-    >
+    <div className={`${styles.container} ${styles[decorationGap]}`}>
       Using flex to align before and after pseudo-elements.
-    </Box>
+    </div>
   );
 };

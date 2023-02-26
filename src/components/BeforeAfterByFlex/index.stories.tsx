@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { BeforeAfterByFlex } from '~/components/BeforeAfterByFlex';
@@ -13,26 +15,21 @@ export default {
       },
     },
   },
-  argTypes: {
-    decorationGapPx: {
-      control: { type: 'range', min: 1, max: 100, step: 1 },
-    },
-  },
 } as ComponentMeta<typeof BeforeAfterByFlex>;
 
 const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => <BeforeAfterByFlex {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  decorationGapPx: undefined,
+  decorationGap: undefined,
 };
 
-export const Gap50 = Template.bind({});
-Gap50.args = {
-  decorationGapPx: 50,
+export const GapSM = Template.bind({});
+GapSM.args = {
+  decorationGap: 'gap-sm',
 };
 
-export const Gap100 = Template.bind({});
-Gap100.args = {
-  decorationGapPx: 100,
+export const GapLG = Template.bind({});
+GapLG.args = {
+  decorationGap: 'gap-lg',
 };
