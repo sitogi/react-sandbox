@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 interface Props {
   decorationGap?: 'gap-sm' | 'gap-md' | 'gap-lg';
