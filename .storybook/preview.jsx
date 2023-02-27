@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { ScreenCenterPlaced } from '~/components/VStack';
+import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
