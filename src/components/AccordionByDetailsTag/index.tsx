@@ -1,52 +1,22 @@
 import { ReactNode, useState } from 'react';
 
-import { Box } from '@chakra-ui/react';
-import { css } from '@emotion/react';
 import { motion, useAnimation } from 'framer-motion';
+
+import styles from './index.module.scss';
 
 interface Props {
   summaryText: string;
   children: ReactNode;
 }
 
-const style = css`
-  height: 100%;
-  width: 100%;
-
-  summary {
-    align-items: center;
-    display: flex;
-    gap: 0.6rem;
-    list-style: none;
-    padding: 0.6rem;
-    user-select: none;
-
-    &:hover {
-      background-color: #e1dede;
-      cursor: pointer;
-      transition: background-color 0.4s;
-    }
-
-    &:before {
-      content: '▶';
-      font-size: 1.4rem;
-    }
-  }
-
-  details[open] summary:before {
-    content: '▼';
-  }
-`;
-
 export const AccordionByDetailsTag = ({ summaryText, children }: Props): JSX.Element => {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const controls = useAnimation();
 
   return (
-    <Box css={style}>
-      <Box as="details" open={detailsOpen}>
-        <Box
-          as="summary"
+    <div className={styles.container}>
+      <details open={detailsOpen}>
+        <summary
           onClick={async (event) => {
             event.preventDefault();
             // details タグの open 属性を消すと詳細が即座に消えてしまう。
@@ -61,9 +31,9 @@ export const AccordionByDetailsTag = ({ summaryText, children }: Props): JSX.Ele
           }}
         >
           {summaryText}
-        </Box>
+        </summary>
         <motion.div animate={controls}>{children}</motion.div>
-      </Box>
-    </Box>
+      </details>
+    </div>
   );
 };

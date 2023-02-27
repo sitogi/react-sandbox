@@ -1,0 +1,28 @@
+.container{
+  height: 100%;
+  width: 100%;
+
+  summary {
+    align-items: center;
+    display: flex;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0.6rem;
+    user-select: none;
+
+    &:hover {
+      background-color: #e1dede;
+      cursor: pointer;
+      transition: background-color 0.4s;
+    }
+
+    &:before {
+      content: '▶';
+      font-size: 1.4rem;
+    }
+  }
+
+  details[open] summary:before {
+    content: '▼';
+  }
+}

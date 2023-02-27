@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { Box, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
@@ -10,13 +12,8 @@ export default {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/BeforeAfterByFlex/index.tsx',
+        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/AccordionByDetailsTag/index.tsx',
       },
-    },
-  },
-  argTypes: {
-    decorationGapPx: {
-      control: { type: 'range', min: 1, max: 100, step: 1 },
     },
   },
 } as ComponentMeta<typeof AccordionByDetailsTag>;
