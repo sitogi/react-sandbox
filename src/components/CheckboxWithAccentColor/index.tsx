@@ -1,4 +1,4 @@
-import styles from '~/components/CheckboxWithAccentColor/index.module.css';
+import styles from '~/components/CheckboxWithAccentColor/index.module.scss';
 
 interface Props {
   accentColor?: 'blue' | 'yellow' | 'green' | 'purple';
