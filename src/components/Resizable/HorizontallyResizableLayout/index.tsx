@@ -1,23 +1,40 @@
 import { useEffect, useRef } from 'react';
 
-import { Flex, Grid } from '@chakra-ui/react';
+import styles from './index.module.scss';
 
 import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
-const ASIDE_INITIAL_SIZE = 350;
 const ASIDE_MIN_SIZE = 200;
 const ASIDE_MAX_SIZE = 500;
 
 const defaultAside = (
-  <Grid w="full" h="100vh" placeContent="center" fontSize="4xl" bg="green.100">
+  <div
+    style={{
+      display: 'grid',
+      width: '100%',
+      height: '100vh',
+      placeContent: 'center',
+      fontSize: '2rem',
+      backgroundColor: '#C6F6D5',
+    }}
+  >
     Aside
-  </Grid>
+  </div>
 );
 
 const defaultMain = (
-  <Grid w="full" h="100vh" placeContent="center" fontSize="4xl" bg="purple.100">
+  <div
+    style={{
+      display: 'grid',
+      width: '100%',
+      height: '100vh',
+      placeContent: 'center',
+      fontSize: '2rem',
+      backgroundColor: '#E9D8FD',
+    }}
+  >
     Main
-  </Grid>
+  </div>
 );
 
 interface Props {
@@ -56,14 +73,10 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
   }, []);
 
   return (
-    <Flex w="100vw" h="100vh">
-      <Grid as="aside" ref={asideRef} h="100%" w={`${ASIDE_INITIAL_SIZE}px`}>
-        {aside}
-      </Grid>
+    <div className={styles.container}>
+      <aside ref={asideRef}>{aside}</aside>
       <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
-      <Grid as="main" h="100%" flex="1 1">
-        {main}
-      </Grid>
-    </Flex>
+      <main>{main}</main>
+    </div>
   );
 };

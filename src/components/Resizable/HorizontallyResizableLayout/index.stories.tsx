@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { HorizontallyResizableLayout } from '~/components/Resizable/HorizontallyResizableLayout/index';
