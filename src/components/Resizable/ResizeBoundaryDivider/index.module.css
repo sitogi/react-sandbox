@@ -1,0 +1,44 @@
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none; /* スマホタッチで pointermove がすぐ中断されないようにする (see: https://stackoverflow.com/questions/48124372/pointermove-event-not-working-with-touch-why-not) */
+  user-select: none; /* ドラッグ中に他領域が選択されるのを抑制する */
+  background: gray;
+}
+
+.divider.vertical {
+  width: 100%;
+  height: 6px;
+  cursor: row-resize;
+}
+
+
+.divider.horizontal {
+   width: 6px;
+   height: 100%;
+   cursor: ew-resize;
+ }
+
+
+.divider:is(:active,:hover) {
+  /* active 疑似要素はタッチデバイスでは反応しないためハイライトされず、hover 疑似要素はタッチ終了後にハイライトが解除されない問題などがあるが一旦妥協している */
+  background: #62acf5;
+  transition: background 0.2s ease-in;
+}
+
+.grep-point {
+  position: absolute;
+  background-color: palevioletred;
+  border-radius: 2rem;
+}
+
+.divider.vertical > .grep-point {
+  width:40px;
+  height:10px;
+}
+
+.divider.horizontal > .grep-point {
+  width:10px;
+  height: 40px;
+}

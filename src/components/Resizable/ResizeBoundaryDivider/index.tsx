@@ -1,4 +1,4 @@
-import styles from '~/components/Resizable/ResizeBoundaryDivider/index.module.scss';
+import styles from './index.module.css';
 
 interface Props {
   onPointerDown: () => void;
