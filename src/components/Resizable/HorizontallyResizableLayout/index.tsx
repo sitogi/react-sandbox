@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import styles from './index.module.scss';
+import styles from './index.module.css';
 
 import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
