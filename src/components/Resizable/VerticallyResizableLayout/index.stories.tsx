@@ -8,7 +8,7 @@ export default {
   title: 'Components/VerticallyResizableLayout',
   component: VerticallyResizableLayout,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       description: {
         component:
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof VerticallyResizableLayout> = () => <Vertic
 export const Default = Template.bind({});
 Default.decorators = [
   (Story) => (
-    <div style={{ width: '100vw' }}>
+    <div style={{ width: '1000px', height: '700px' }}>
       <Story />
     </div>
   ),
@@ -32,7 +32,7 @@ Default.decorators = [
 export const SidebarLike = Template.bind({});
 SidebarLike.decorators = [
   (Story) => (
-    <div style={{ width: '300px' }}>
+    <div style={{ width: '300px', height: '700px' }}>
       <Story />
     </div>
   ),

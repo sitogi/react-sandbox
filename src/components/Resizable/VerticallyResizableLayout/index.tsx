@@ -5,7 +5,7 @@ import styles from './index.module.css';
 import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
 const FIRST_AREA_MIN_SIZE = 200;
-const FIRST_AREA_MAX_SIZE = 800;
+const FIRST_AREA_MAX_SIZE = 600;
 
 const defaultUp = (
   <div
@@ -17,7 +17,7 @@ const defaultUp = (
       fontSize: '2rem',
     }}
   >
-    Aside
+    Up
   </div>
 );
 
@@ -31,7 +31,7 @@ const defaultBottom = (
       fontSize: '2rem',
     }}
   >
-    Main
+    Bottom
   </div>
 );
 
@@ -50,15 +50,17 @@ export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBott
     document.addEventListener('pointerup', pointerUpListener);
 
     const pointerMoveListener = (event: PointerEvent) => {
-      const y = event.y;
-
       if (isPointerPressedRef.current && resizeTargetRef.current !== null) {
-        if (y < FIRST_AREA_MIN_SIZE) {
+        const pointerY = event.y;
+        const clientTop = resizeTargetRef.current.getBoundingClientRect().top;
+        const newHeight = pointerY - clientTop;
+
+        if (newHeight < FIRST_AREA_MIN_SIZE) {
           resizeTargetRef.current.style.height = `${FIRST_AREA_MIN_SIZE}px`;
-        } else if (y > FIRST_AREA_MAX_SIZE) {
+        } else if (newHeight > FIRST_AREA_MAX_SIZE) {
           resizeTargetRef.current.style.height = `${FIRST_AREA_MAX_SIZE}px`;
         } else {
-          resizeTargetRef.current.style.height = `${y}px`;
+          resizeTargetRef.current.style.height = `${newHeight}px`;
         }
       }
     };

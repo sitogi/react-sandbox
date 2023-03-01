@@ -9,7 +9,7 @@ export default {
   title: 'Components/HorizontallyResizableLayout',
   component: HorizontallyResizableLayout,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       description: {
         component:
@@ -20,12 +20,18 @@ export default {
 } as ComponentMeta<typeof HorizontallyResizableLayout>;
 
 const Template: ComponentStory<typeof HorizontallyResizableLayout> = (args) => (
-  <HorizontallyResizableLayout {...args} />
+  <div style={{ width: '1000px', height: '500px' }}>
+    <HorizontallyResizableLayout {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
 
 export const WithVerticallyResizableSidebar = Template.bind({});
 WithVerticallyResizableSidebar.args = {
-  aside: <VerticallyResizableLayout />,
+  aside: (
+    <div style={{ height: '500px' }}>
+      <VerticallyResizableLayout />
+    </div>
+  ),
 };
