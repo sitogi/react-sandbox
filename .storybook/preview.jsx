@@ -1,6 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
-
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
@@ -28,12 +25,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  (Story) => (
-    <ChakraProvider>
-      <ScreenCenterPlaced>
-        <Story />
-      </ScreenCenterPlaced>
-    </ChakraProvider>
-  ),
-];
+export const decorators = [(Story) => <Story />];

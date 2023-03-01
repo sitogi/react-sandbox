@@ -1,9 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { Box, VStack } from '@chakra-ui/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AccordionByDetailsTag } from '~/components/AccordionByDetailsTag';
+import { VStack } from '~/components/VStack';
 
 export default {
   title: 'Components/AccordionByDetailsTag',
@@ -19,27 +19,17 @@ export default {
 } as ComponentMeta<typeof AccordionByDetailsTag>;
 
 const Template: ComponentStory<typeof AccordionByDetailsTag> = () => (
-  <Box w="300px" h="300px">
+  <div style={{ width: '300px', height: '300px' }}>
     <AccordionByDetailsTag summaryText="サマリーテキストです">
-      <VStack mt={2} align="stretch">
-        <Box p={2} bg="blue.100">
-          てすと 1
-        </Box>
-        <Box p={2} bg="blue.100">
-          てすと 2
-        </Box>
-        <Box p={2} bg="blue.100">
-          てすと 3
-        </Box>
-        <Box p={2} bg="blue.100">
-          てすと 4
-        </Box>
-        <Box p={2} bg="blue.100">
-          てすと 5
-        </Box>
+      <VStack>
+        <div style={{ padding: '10px', backgroundColor: '#a7ccf1', marginTop: '10px' }}>てすと 1</div>
+        <div style={{ padding: '10px', backgroundColor: '#a7ccf1' }}>てすと 2</div>
+        <div style={{ padding: '10px', backgroundColor: '#a7ccf1' }}>てすと 3</div>
+        <div style={{ padding: '10px', backgroundColor: '#a7ccf1' }}>てすと 4</div>
+        <div style={{ padding: '10px', backgroundColor: '#a7ccf1' }}>てすと 5</div>
       </VStack>
     </AccordionByDetailsTag>
-  </Box>
+  </div>
 );
 
 export const Default = Template.bind({});

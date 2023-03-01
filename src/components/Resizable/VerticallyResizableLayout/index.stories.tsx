@@ -1,4 +1,5 @@
-import { Box } from '@chakra-ui/react';
+// noinspection JSUnusedGlobalSymbols
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { VerticallyResizableLayout } from '~/components/Resizable/VerticallyResizableLayout/index';
@@ -22,17 +23,17 @@ const Template: ComponentStory<typeof VerticallyResizableLayout> = () => <Vertic
 export const Default = Template.bind({});
 Default.decorators = [
   (Story) => (
-    <Box w="100vw">
+    <div style={{ width: '100vw' }}>
       <Story />
-    </Box>
+    </div>
   ),
 ];
 
 export const SidebarLike = Template.bind({});
 SidebarLike.decorators = [
   (Story) => (
-    <Box w="300px">
+    <div style={{ width: '300px' }}>
       <Story />
-    </Box>
+    </div>
   ),
 ];
