@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-import { Flex, Grid } from '@chakra-ui/react';
+import styles from './index.module.css';
 
 import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
 const HEADER_SIZE = 80;
-const FIRST_AREA_INITIAL_SIZE = 300;
 const FIRST_AREA_MIN_SIZE = 200;
 const FIRST_AREA_MAX_SIZE = 800;
 
@@ -40,31 +39,13 @@ export const VerticallyResizableLayout = (): JSX.Element => {
   }, []);
 
   return (
-    <Flex w="full" h="100dvh" direction="column">
-      <Grid
-        placeContent="center"
-        w="full"
-        bgColor="red.100"
-        borderBottom="solid 4px"
-        flex={`0 0 ${HEADER_SIZE}px`}
-        fontSize="4xl"
-      >
-        App Title
-      </Grid>
-      <Grid
-        ref={resizeTargetRef}
-        h={`${FIRST_AREA_INITIAL_SIZE}px`}
-        w="full"
-        placeContent="center"
-        fontSize="4xl"
-        bg="green.100"
-      >
+    <div className={styles.container}>
+      <div className={styles.header}>App Title</div>
+      <div className={styles.resizable} ref={resizeTargetRef}>
         Category A
-      </Grid>
+      </div>
       <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} isVertical />
-      <Grid w="full" flex="1 1" placeContent="center" fontSize="4xl" bg="yellow.100">
-        Category B
-      </Grid>
-    </Flex>
+      <div className={styles.bottom}>Category B</div>
+    </div>
   );
 };

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+}
+
+.container > .header {
+  display: grid;
+  flex: 0 0 80px;
+  place-content: center;
+  width: 100%;
+  font-size: 1.6rem;
+  background-color: #f6b2c8;
+  border-bottom: solid 4px;
+}
+
+.container > .resizable {
+  display: grid;
+  place-content: center;
+  height: 300px;
+  font-size: 1.6rem;
+  background-color: #bbe071;
+}
+
+.container > .bottom {
+  display: grid;
+  flex: 1 1;
+  place-content: center;
+  height: 300px;
+  font-size: 1.6rem;
+  background-color: #f3f38c;
+}
