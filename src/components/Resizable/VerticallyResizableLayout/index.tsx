@@ -4,11 +4,43 @@ import styles from './index.module.css';
 
 import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
 
-const HEADER_SIZE = 80;
 const FIRST_AREA_MIN_SIZE = 200;
 const FIRST_AREA_MAX_SIZE = 800;
 
-export const VerticallyResizableLayout = (): JSX.Element => {
+const defaultUp = (
+  <div
+    style={{
+      display: 'grid',
+      width: '100%',
+      height: '100%',
+      placeContent: 'center',
+      fontSize: '2rem',
+    }}
+  >
+    Aside
+  </div>
+);
+
+const defaultBottom = (
+  <div
+    style={{
+      display: 'grid',
+      width: '100%',
+      height: '100%',
+      placeContent: 'center',
+      fontSize: '2rem',
+    }}
+  >
+    Main
+  </div>
+);
+
+interface Props {
+  up?: JSX.Element;
+  bottom?: JSX.Element;
+}
+
+export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBottom }: Props): JSX.Element => {
   const isPointerPressedRef = useRef(false);
   const resizeTargetRef = useRef<HTMLDivElement>(null);
 
@@ -22,11 +54,11 @@ export const VerticallyResizableLayout = (): JSX.Element => {
 
       if (isPointerPressedRef.current && resizeTargetRef.current !== null) {
         if (y < FIRST_AREA_MIN_SIZE) {
-          resizeTargetRef.current.style.height = `${FIRST_AREA_MIN_SIZE - HEADER_SIZE}px`;
+          resizeTargetRef.current.style.height = `${FIRST_AREA_MIN_SIZE}px`;
         } else if (y > FIRST_AREA_MAX_SIZE) {
-          resizeTargetRef.current.style.height = `${FIRST_AREA_MAX_SIZE - HEADER_SIZE}px`;
+          resizeTargetRef.current.style.height = `${FIRST_AREA_MAX_SIZE}px`;
         } else {
-          resizeTargetRef.current.style.height = `${y - HEADER_SIZE}px`;
+          resizeTargetRef.current.style.height = `${y}px`;
         }
       }
     };
@@ -40,12 +72,11 @@ export const VerticallyResizableLayout = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>App Title</div>
       <div className={styles.resizable} ref={resizeTargetRef}>
-        Category A
+        {up}
       </div>
       <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} isVertical />
-      <div className={styles.bottom}>Category B</div>
+      <div className={styles.bottom}>{bottom}</div>
     </div>
   );
 };
