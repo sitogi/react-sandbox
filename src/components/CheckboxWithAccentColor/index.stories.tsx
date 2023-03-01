@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { CheckboxWithAccentColor } from '~/components/CheckboxWithAccentColor';
@@ -6,7 +8,7 @@ export default {
   title: 'Components/CheckboxWithAccentColor',
   component: CheckboxWithAccentColor,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       description: {
         component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/Checkbox/index.tsx',

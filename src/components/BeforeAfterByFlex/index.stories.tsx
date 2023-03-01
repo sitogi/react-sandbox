@@ -8,7 +8,7 @@ export default {
   title: 'Components/BeforeAfterByFlex',
   component: BeforeAfterByFlex,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       description: {
         component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/BeforeAfterByFlex/index.tsx',

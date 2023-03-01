@@ -9,7 +9,7 @@ export default {
   title: 'Components/AccordionByDetailsTag',
   component: AccordionByDetailsTag,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     docs: {
       description: {
         component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/AccordionByDetailsTag/index.tsx',
