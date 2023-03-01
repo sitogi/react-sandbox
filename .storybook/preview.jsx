@@ -1,3 +1,5 @@
+import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
@@ -25,4 +27,10 @@ export const parameters = {
   },
 };
 
-export const decorators = [(Story) => <Story />];
+export const decorators = [
+  (Story) => (
+    <ScreenCenterPlaced>
+      <Story />
+    </ScreenCenterPlaced>
+  ),
+];
