@@ -10,6 +10,7 @@ export const parameters = {
     },
   },
   options: {
+    showPanel: false,
     storySort: {
       order: [
         'Components',
