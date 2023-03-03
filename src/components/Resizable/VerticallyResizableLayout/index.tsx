@@ -17,7 +17,7 @@ const defaultUp = (
       fontSize: '2rem',
     }}
   >
-    Up
+    Up{' '}
   </div>
 );
 
@@ -31,7 +31,7 @@ const defaultBottom = (
       fontSize: '2rem',
     }}
   >
-    Bottom
+    Bottom{' '}
   </div>
 );
 
@@ -46,10 +46,16 @@ export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBott
 
   useEffect(() => {
     // 各リスナーはリサイズ中にバーからカーソルがずれても効くようにドキュメント全体に張る
-    const pointerUpListener = () => (isPointerPressedRef.current = false);
-    document.addEventListener('pointerup', pointerUpListener);
+    const onPointerUp = () => {
+      const entireScreen = document.body.parentElement;
+      if (entireScreen) {
+        entireScreen.style.cursor = 'auto';
+      }
+      isPointerPressedRef.current = false;
+    };
+    document.addEventListener('pointerup', onPointerUp);
 
-    const pointerMoveListener = (event: PointerEvent) => {
+    const onPointerMove = (event: PointerEvent) => {
       if (isPointerPressedRef.current && resizeTargetRef.current !== null) {
         const pointerY = event.y;
         const clientTop = resizeTargetRef.current.getBoundingClientRect().top;
@@ -64,20 +70,28 @@ export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBott
         }
       }
     };
-    document.addEventListener('pointermove', pointerMoveListener);
+    document.addEventListener('pointermove', onPointerMove);
 
     return () => {
-      document.removeEventListener('pointerup', pointerUpListener);
-      document.removeEventListener('pointermove', pointerMoveListener);
+      document.removeEventListener('pointerup', onPointerUp);
+      document.removeEventListener('pointermove', onPointerMove);
     };
   }, []);
+
+  const onPointerDown = () => {
+    const entireScreen = document.body.parentElement;
+    if (entireScreen) {
+      entireScreen.style.cursor = 'row-resize';
+    }
+    isPointerPressedRef.current = true;
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.resizable} ref={resizeTargetRef}>
         {up}
       </div>
-      <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} isVertical />
+      <ResizeBoundaryDivider onPointerDown={onPointerDown} resizeDirection="vertical" />
       <div className={styles.bottom}>{bottom}</div>
     </div>
   );

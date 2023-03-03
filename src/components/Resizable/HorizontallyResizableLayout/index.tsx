@@ -48,10 +48,16 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
 
   useEffect(() => {
     // 各リスナーはリサイズ中にバーからカーソルがずれても効くようにドキュメント全体に張る
-    const pointerUpListener = () => (isPointerPressedRef.current = false);
-    document.addEventListener('pointerup', pointerUpListener);
+    const onPointerUp = () => {
+      const entireScreen = document.body.parentElement;
+      if (entireScreen) {
+        entireScreen.style.cursor = 'auto';
+      }
+      isPointerPressedRef.current = false;
+    };
+    document.addEventListener('pointerup', onPointerUp);
 
-    const pointerMoveListener = (event: PointerEvent) => {
+    const onPointerMove = (event: PointerEvent) => {
       if (isPointerPressedRef.current && asideRef.current !== null) {
         const pointerX = event.x;
         const clientLeft = asideRef.current.getBoundingClientRect().left;
@@ -66,18 +72,26 @@ export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defau
         }
       }
     };
-    document.addEventListener('pointermove', pointerMoveListener);
+    document.addEventListener('pointermove', onPointerMove);
 
     return () => {
-      document.removeEventListener('pointerup', pointerUpListener);
-      document.removeEventListener('pointermove', pointerMoveListener);
+      document.removeEventListener('pointerup', onPointerUp);
+      document.removeEventListener('pointermove', onPointerMove);
     };
   }, []);
+
+  const onPointerDown = () => {
+    const entireScreen = document.body.parentElement;
+    if (entireScreen) {
+      entireScreen.style.cursor = 'ew-resize';
+    }
+    isPointerPressedRef.current = true;
+  };
 
   return (
     <div className={styles.container}>
       <aside ref={asideRef}>{aside}</aside>
-      <ResizeBoundaryDivider onPointerDown={() => (isPointerPressedRef.current = true)} />
+      <ResizeBoundaryDivider onPointerDown={onPointerDown} resizeDirection="horizontal" />
       <main>{main}</main>
     </div>
   );
