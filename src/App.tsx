@@ -1,5 +1,10 @@
 import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
+import { SimpleForm } from '~/components/SimpleForm';
 
 export function App() {
-  return <ScreenCenterPlaced>Hello react sandbox!</ScreenCenterPlaced>;
+  return (
+    <ScreenCenterPlaced>
+      <SimpleForm />
+    </ScreenCenterPlaced>
+  );
 }

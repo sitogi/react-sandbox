@@ -13,10 +13,13 @@
     "preinstall": "npx -y only-allow npm"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.11",
     "firebase": "^9.15.0",
     "framer-motion": "^6",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.43.5",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

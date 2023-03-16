@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.container input {
+  width: 250px;
+  height: 1.6rem;
+  border-radius: 4px;
+}
+
+.container button {
+  width: 100px;
+  height: 1.6rem;
+  margin: 1rem 0 0 auto;
+}
+
+.container .error-msg {
+  color: red;
+}
