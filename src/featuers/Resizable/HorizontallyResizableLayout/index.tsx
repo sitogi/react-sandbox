@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import styles from './index.module.css';
 
-import { ResizeBoundaryDivider } from '~/components/Resizable/ResizeBoundaryDivider';
+import { ResizeBoundaryDivider } from '~/featuers/Resizable/ResizeBoundaryDivider';
 
 const ASIDE_MIN_SIZE = 200;
 const ASIDE_MAX_SIZE = 500;

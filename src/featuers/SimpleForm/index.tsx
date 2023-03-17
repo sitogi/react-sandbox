@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 
 import styles from './index.module.css';
 
-import { VStack } from '~/components/VStack';
+import { VStack } from '~/featuers/VStack';
 
 type FormData = {
   name: string;

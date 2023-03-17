@@ -2,7 +2,7 @@
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { VerticallyResizableLayout } from '~/components/Resizable/VerticallyResizableLayout/index';
+import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout/index';
 
 export default {
   title: 'Components/VerticallyResizableLayout',

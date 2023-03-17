@@ -2,8 +2,8 @@
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AccordionByDetailsTag } from '~/components/AccordionByDetailsTag';
-import { VStack } from '~/components/VStack';
+import { AccordionByDetailsTag } from '~/featuers/AccordionByDetailsTag';
+import { VStack } from '~/featuers/VStack';
 
 export default {
   title: 'Components/AccordionByDetailsTag',

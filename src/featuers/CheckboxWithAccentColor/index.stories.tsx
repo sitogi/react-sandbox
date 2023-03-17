@@ -2,7 +2,7 @@
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { CheckboxWithAccentColor } from '~/components/CheckboxWithAccentColor';
+import { CheckboxWithAccentColor } from '~/featuers/CheckboxWithAccentColor';
 
 export default {
   title: 'Components/CheckboxWithAccentColor',

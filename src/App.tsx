@@ -1,5 +1,5 @@
-import { ScreenCenterPlaced } from '~/components/ScreenCenterPlaced';
-import { SimpleForm } from '~/components/SimpleForm';
+import { ScreenCenterPlaced } from '~/featuers/ScreenCenterPlaced';
+import { SimpleForm } from '~/featuers/SimpleForm';
 
 export function App() {
   return (

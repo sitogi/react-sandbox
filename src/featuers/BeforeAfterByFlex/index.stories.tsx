@@ -2,7 +2,7 @@
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { BeforeAfterByFlex } from '~/components/BeforeAfterByFlex';
+import { BeforeAfterByFlex } from '~/featuers/BeforeAfterByFlex';
 
 export default {
   title: 'Components/BeforeAfterByFlex',
