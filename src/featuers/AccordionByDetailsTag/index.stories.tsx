@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { AccordionByDetailsTag } from '~/featuers/AccordionByDetailsTag';
 import { VStack } from '~/featuers/VStack';
@@ -16,9 +16,9 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof AccordionByDetailsTag>;
+} as Meta<typeof AccordionByDetailsTag>;
 
-const Template: ComponentStory<typeof AccordionByDetailsTag> = () => (
+const Template: StoryFn<typeof AccordionByDetailsTag> = () => (
   <div style={{ width: '300px', height: '300px' }}>
     <AccordionByDetailsTag summaryText="サマリーテキストです">
       <VStack>
