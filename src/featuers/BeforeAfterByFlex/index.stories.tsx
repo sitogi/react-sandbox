@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { BeforeAfterByFlex } from '~/featuers/BeforeAfterByFlex';
 
@@ -15,21 +15,25 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof BeforeAfterByFlex>;
+} as Meta<typeof BeforeAfterByFlex>;
 
-const Template: ComponentStory<typeof BeforeAfterByFlex> = (args) => <BeforeAfterByFlex {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  decorationGap: undefined,
+export const Default: StoryObj<typeof BeforeAfterByFlex> = {
+  name: '通常表示',
+  args: {
+    decorationGap: 'gap-md',
+  },
 };
 
-export const GapSM = Template.bind({});
-GapSM.args = {
-  decorationGap: 'gap-sm',
+export const GapSmall: StoryObj<typeof BeforeAfterByFlex> = {
+  name: '間隔小さめ',
+  args: {
+    decorationGap: 'gap-sm',
+  },
 };
 
-export const GapLG = Template.bind({});
-GapLG.args = {
-  decorationGap: 'gap-lg',
+export const GapLarge: StoryObj<typeof BeforeAfterByFlex> = {
+  name: '間隔大きめ',
+  args: {
+    decorationGap: 'gap-lg',
+  },
 };

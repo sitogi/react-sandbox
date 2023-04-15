@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { CheckboxWithAccentColor } from '~/featuers/CheckboxWithAccentColor';
 
@@ -15,26 +15,29 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof CheckboxWithAccentColor>;
+} as Meta<typeof CheckboxWithAccentColor>;
 
-const Template: ComponentStory<typeof CheckboxWithAccentColor> = (args) => <CheckboxWithAccentColor {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  accentColor: undefined,
+export const Default: StoryObj<typeof CheckboxWithAccentColor> = {
+  name: '通常表示',
 };
 
-export const Purple = Template.bind({});
-Purple.args = {
-  accentColor: 'purple',
+export const Purple: StoryObj<typeof CheckboxWithAccentColor> = {
+  name: 'むらさき',
+  args: {
+    accentColor: 'purple',
+  },
 };
 
-export const Green = Template.bind({});
-Green.args = {
-  accentColor: 'green',
+export const Green: StoryObj<typeof CheckboxWithAccentColor> = {
+  name: 'みどり',
+  args: {
+    accentColor: 'green',
+  },
 };
 
-export const Yellow = Template.bind({});
-Yellow.args = {
-  accentColor: 'yellow',
+export const Yellow: StoryObj<typeof CheckboxWithAccentColor> = {
+  name: 'きいろ',
+  args: {
+    accentColor: 'yellow',
+  },
 };

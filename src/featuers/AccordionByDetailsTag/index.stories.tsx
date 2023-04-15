@@ -1,22 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn, StoryObj } from '@storybook/react';
 
 import { AccordionByDetailsTag } from '~/featuers/AccordionByDetailsTag';
 import { VStack } from '~/featuers/VStack';
-
-export default {
-  title: 'Components/AccordionByDetailsTag',
-  component: AccordionByDetailsTag,
-  parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/AccordionByDetailsTag/index.tsx',
-      },
-    },
-  },
-} as Meta<typeof AccordionByDetailsTag>;
 
 const Template: StoryFn<typeof AccordionByDetailsTag> = () => (
   <div style={{ width: '300px', height: '300px' }}>
@@ -32,7 +19,19 @@ const Template: StoryFn<typeof AccordionByDetailsTag> = () => (
   </div>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  summaryText: 'サマリーテキストです',
+export default {
+  title: 'Components/AccordionByDetailsTag',
+  component: Template,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'https://github.com/sitogi/react-sandbox/blob/main/src/components/AccordionByDetailsTag/index.tsx',
+      },
+    },
+  },
+} as Meta<typeof AccordionByDetailsTag>;
+
+export const Authenticated: StoryObj = {
+  name: '通常表示',
 };
