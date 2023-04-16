@@ -1,7 +1,8 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
+import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout';
 import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout/index';
 
 export default {
@@ -16,24 +17,26 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof VerticallyResizableLayout>;
+} as Meta<typeof VerticallyResizableLayout>;
 
-const Template: ComponentStory<typeof VerticallyResizableLayout> = () => <VerticallyResizableLayout />;
+export const Default: StoryObj<typeof VerticallyResizableLayout> = {
+  name: '通常表示',
+  decorators: [
+    (Story) => (
+      <div style={{ width: '1000px', height: '700px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
 
-export const Default = Template.bind({});
-Default.decorators = [
-  (Story) => (
-    <div style={{ width: '1000px', height: '700px' }}>
-      <Story />
-    </div>
-  ),
-];
-
-export const SidebarLike = Template.bind({});
-SidebarLike.decorators = [
-  (Story) => (
-    <div style={{ width: '300px', height: '700px' }}>
-      <Story />
-    </div>
-  ),
-];
+export const SidebarLike: StoryObj<typeof VerticallyResizableLayout> = {
+  name: 'HorizontallyResizable と組み合わせる',
+  decorators: [
+    (Story) => (
+      <div style={{ width: '1000px', height: '700px' }}>
+        <HorizontallyResizableLayout aside={<Story />}></HorizontallyResizableLayout>
+      </div>
+    ),
+  ],
+};
