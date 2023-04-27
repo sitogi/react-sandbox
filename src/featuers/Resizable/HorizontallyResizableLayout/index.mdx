@@ -1,0 +1,27 @@
+{/* index.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as HorizontallyResizableLayoutStories from './index.stories';
+
+
+<Meta of={HorizontallyResizableLayoutStories} />
+
+# HorizontallyResizableLayoutStories
+
+水平方向にリサイズが可能なレイアウトです。 <br />
+以下の点を工夫しています。
+
+- 各領域の横幅は useState は使用せず ref で管理し、リサイズ時に再レンダリングが発生しないようにしています
+- リサイズ可能であることを分かりやすくするため、ホバー時にバーの色やカーソルを変えています
+- リサイズ (ドラッグ) 中にバーとポインタがずれてもカーソルやホバー時の色が変わらないように、リスナーをドキュメント全体に張るようにしています
+
+## 通常表示
+
+<Canvas of={HorizontallyResizableLayoutStories.Default} />
+
+## VerticallyResizableLayout と組み合わせる
+
+縦方向にリサイズが可能な VerticallyResizableLayout と組み合わせることで、チャットソフトなどで見られる縦横にリサイズ可能なサイドバー付きのレイアウトを実現できます。
+
+<Canvas of={HorizontallyResizableLayoutStories.WithVerticallyResizableSidebar} />

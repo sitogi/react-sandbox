@@ -10,14 +10,8 @@ export default {
   component: VerticallyResizableLayout,
   parameters: {
     layout: 'centered',
-    docs: {
-      description: {
-        component:
-          'https://github.com/sitogi/react-sandbox/blob/main/src/components/Resizable/VerticallyResizableSidebar/index.tsx',
-      },
-    },
   },
-} as Meta<typeof VerticallyResizableLayout>;
+} satisfies Meta<typeof VerticallyResizableLayout>;
 
 export const Default: StoryObj<typeof VerticallyResizableLayout> = {
   name: '通常表示',
@@ -30,7 +24,7 @@ export const Default: StoryObj<typeof VerticallyResizableLayout> = {
   ],
 };
 
-export const SidebarLike: StoryObj<typeof VerticallyResizableLayout> = {
+export const WithHorizontallyResizable: StoryObj<typeof VerticallyResizableLayout> = {
   name: 'HorizontallyResizable と組み合わせる',
   decorators: [
     (Story) => (

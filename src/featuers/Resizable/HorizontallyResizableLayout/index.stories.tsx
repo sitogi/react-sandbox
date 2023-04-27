@@ -1,35 +1,32 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { Meta, StoryFn, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout/index';
 import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout';
 
-const Template: StoryFn<typeof HorizontallyResizableLayout> = (args) => (
-  <div style={{ width: '1000px', height: '500px' }}>
-    <HorizontallyResizableLayout {...args} />
-  </div>
-);
-
 export default {
   title: 'Components/HorizontallyResizableLayout',
-  component: Template,
+  component: HorizontallyResizableLayout,
   parameters: {
     layout: 'centered',
-    docs: {
-      description: {
-        component:
-          'https://github.com/sitogi/react-sandbox/blob/main/src/components/Resizable/HorizontallyResizableLayout/index.tsx',
-      },
-    },
   },
-} as Meta<typeof HorizontallyResizableLayout>;
+  decorators: [
+    (Story) => (
+      <div style={{ width: '1000px', height: '500px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+} satisfies Meta<typeof HorizontallyResizableLayout>;
 
-export const Default: StoryObj<typeof Template> = {
+type Story = StoryObj<typeof HorizontallyResizableLayout>;
+
+export const Default: Story = {
   name: '通常表示',
 };
 
-export const WithVerticallyResizableSidebar: StoryObj<typeof Template> = {
+export const WithVerticallyResizableSidebar: Story = {
   name: 'VerticallyResizable と組み合わせる',
   args: {
     aside: (
