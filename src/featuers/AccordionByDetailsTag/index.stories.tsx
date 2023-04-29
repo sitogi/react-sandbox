@@ -32,6 +32,6 @@ export default {
   },
 } as Meta<typeof AccordionByDetailsTag>;
 
-export const Authenticated: StoryObj = {
+export const Default: StoryObj = {
   name: '通常表示',
 };

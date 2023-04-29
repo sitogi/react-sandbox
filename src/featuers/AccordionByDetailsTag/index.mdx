@@ -1,0 +1,18 @@
+{/* index.mdx */}
+
+import {Canvas, Meta} from '@storybook/blocks';
+
+import * as AccordionStories from './index.stories';
+
+<Meta of={AccordionStories} />
+
+# HorizontallyResizableLayoutStories
+
+details タグと summary タグを使い作成したアコーディオンです。 <br />
+
+- details と summary を利用することで特殊な対応をせずにアクセシビリティを担保しています
+- details タグの open 属性を消すと summary 以下が即座に消えてしまいそのままではアニメーションが付与できなかったので、JavaScript によってアニメーション実行後に open 属性を削除するようにしています
+
+## 通常表示
+
+<Canvas of={AccordionStories.Default} />
