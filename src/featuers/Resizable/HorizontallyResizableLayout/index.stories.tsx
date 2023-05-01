@@ -3,6 +3,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout/index';
+import { QueryContainer } from '~/featuers/Resizable/QueryContainer';
 import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout';
 
 export default {
@@ -34,5 +35,12 @@ export const WithVerticallyResizableSidebar: Story = {
         <VerticallyResizableLayout />
       </div>
     ),
+  },
+};
+
+export const WithContainerQuery: Story = {
+  name: 'コンテナクエリと組み合わせる',
+  args: {
+    aside: <QueryContainer />,
   },
 };

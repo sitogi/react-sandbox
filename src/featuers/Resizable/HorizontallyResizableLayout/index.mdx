@@ -1,9 +1,8 @@
 {/* index.mdx */}
 
-import { Canvas, Meta } from '@storybook/blocks';
 
+import {Canvas, Meta} from '@storybook/blocks';
 import * as HorizontallyResizableLayoutStories from './index.stories';
-
 
 <Meta of={HorizontallyResizableLayoutStories} />
 
@@ -25,3 +24,9 @@ import * as HorizontallyResizableLayoutStories from './index.stories';
 縦方向にリサイズが可能な VerticallyResizableLayout と組み合わせることで、チャットソフトなどで見られる縦横にリサイズ可能なサイドバー付きのレイアウトを実現できます。
 
 <Canvas of={HorizontallyResizableLayoutStories.WithVerticallyResizableSidebar} />
+
+## コンテナクエリと組み合わせる
+
+コンテナクエリと組み合わせて、リサイズ領域の広さによって内部のコンテンツを書き換えています。
+
+<Canvas of={HorizontallyResizableLayoutStories.WithContainerQuery} />

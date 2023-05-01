@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  container-type: inline-size;
+  background-color: #ddfaa6;
+}
+
+.container::before {
+  color: red;
+  content: "せまいよー";
+}
+
+@container (min-width: 300px) {
+  .container::before {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: blue;
+    content: "ひろいよー";
+  }
+}
