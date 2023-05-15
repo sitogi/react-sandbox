@@ -1,0 +1,18 @@
+{/* index.mdx */}
+
+import {Canvas, Meta} from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# ReactGridLayoutDemo
+
+Grid レイアウトを DnD で並び替えたり、リサイズするためのライブラリ [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout) の素振り。 <br />
+公式の最小サンプルコードに以下の変更を加えた程度。
+
+- 最低限のスタイルを付与
+- リサイズ中に各アイテムが選択状態になるのが気になったので、リサイズ中にのみ user-select: none を付与するようにした
+
+## 通常表示
+
+<Canvas of={Stories.Default} />
