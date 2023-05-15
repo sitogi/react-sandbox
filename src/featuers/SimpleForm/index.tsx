@@ -22,12 +22,12 @@ export const SimpleForm = (): JSX.Element => {
           <div>
             <label htmlFor="name">name:</label>
             <input id="name" {...register('name', { required: true })} />
-            {errors.name && <p className={styles['error-msg']}>name is required.</p>}
+            {errors.name && <p className={styles.errorMsg}>name is required.</p>}
           </div>
           <div>
             <label htmlFor="age">age:</label>
             <input id="age" {...register('age', { required: true })} />
-            {errors.age && <p className={styles['error-msg']}>age is required.</p>}
+            {errors.age && <p className={styles.errorMsg}>age is required.</p>}
           </div>
           <button type="submit">Submit</button>
         </VStack>

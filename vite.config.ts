@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 // noinspection JSUnusedGlobalSymbols
@@ -8,6 +8,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${__dirname}/src/`, // path.join(__dirname, "src/") でも可
+    },
+  },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
     },
   },
 });

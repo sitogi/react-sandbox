@@ -17,7 +17,7 @@ export function ReactGridLayoutDemo(): JSX.Element {
 
   return (
     <GridLayout
-      className={`layout ${styles['grid-layout']}`}
+      className={`layout ${styles.gridLayout}`}
       layout={layout}
       cols={10}
       rowHeight={30}
@@ -27,13 +27,13 @@ export function ReactGridLayoutDemo(): JSX.Element {
       onDragStart={disableSelect}
       onDragStop={enableSelect}
     >
-      <div key="a" className={`${styles['grid-item']} ${selectDisabled ? styles['select-none'] : undefined}`}>
+      <div key="a" className={`${styles.gridItem} ${selectDisabled ? styles.selectNone : undefined}`}>
         a
       </div>
-      <div key="b" className={`${styles['grid-item']} ${selectDisabled ? styles['select-none'] : undefined}`}>
+      <div key="b" className={`${styles.gridItem} ${selectDisabled ? styles.selectNone : undefined}`}>
         b
       </div>
-      <div key="c" className={`${styles['grid-item']} ${selectDisabled ? styles['select-none'] : undefined}`}>
+      <div key="c" className={`${styles.gridItem} ${selectDisabled ? styles.selectNone : undefined}`}>
         c
       </div>
     </GridLayout>

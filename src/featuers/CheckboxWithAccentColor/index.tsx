@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const CheckboxWithAccentColor = ({ accentColor = 'blue' }: Props): JSX.Element => {
-  return <input type="checkbox" className={`${styles['my-checkbox']} ${styles[accentColor]}`} />;
+  return <input type="checkbox" className={`${styles.myCheckbox} ${styles[accentColor]}`} />;
 };

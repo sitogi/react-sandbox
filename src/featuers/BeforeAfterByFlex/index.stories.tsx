@@ -20,20 +20,20 @@ export default {
 export const Default: StoryObj<typeof BeforeAfterByFlex> = {
   name: '通常表示',
   args: {
-    decorationGap: 'gap-md',
+    decorationGap: 'gapMd',
   },
 };
 
 export const GapSmall: StoryObj<typeof BeforeAfterByFlex> = {
   name: '間隔小さめ',
   args: {
-    decorationGap: 'gap-sm',
+    decorationGap: 'gapSm',
   },
 };
 
 export const GapLarge: StoryObj<typeof BeforeAfterByFlex> = {
   name: '間隔大きめ',
   args: {
-    decorationGap: 'gap-lg',
+    decorationGap: 'gapLg',
   },
 };

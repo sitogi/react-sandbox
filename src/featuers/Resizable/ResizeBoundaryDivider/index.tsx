@@ -8,7 +8,7 @@ interface Props {
 export const ResizeBoundaryDivider = ({ onPointerDown, resizeDirection }: Props): JSX.Element => {
   return (
     <div className={`${styles.divider} ${styles[resizeDirection]}`} onPointerDown={onPointerDown}>
-      <div className={styles['grep-point']} />
+      <div className={styles.grepPoint} />
     </div>
   );
 };
