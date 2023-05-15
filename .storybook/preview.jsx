@@ -17,6 +17,7 @@ export const parameters = {
         [
           'HorizontallyResizableLayout',
           'VerticallyResizableLayout',
+          'ReactGridLayoutDemo',
           'AccordionByDetailsTag',
           'BeforeAfterByFlex',
           'CheckboxWithAccentColor',
@@ -25,5 +26,3 @@ export const parameters = {
     },
   },
 };
-
-export const decorators = [(Story) => <Story />];
