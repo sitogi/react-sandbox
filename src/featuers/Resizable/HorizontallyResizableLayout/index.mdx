@@ -1,6 +1,6 @@
 {/* index.mdx */}
 
-import {Canvas, Meta} from '@storybook/blocks';
+import { Canvas, Meta } from '@storybook/blocks';
 import * as HorizontallyResizableLayoutStories from './index.stories';
 
 <Meta of={HorizontallyResizableLayoutStories} />
@@ -13,6 +13,7 @@ import * as HorizontallyResizableLayoutStories from './index.stories';
 - 各領域の横幅は useState は使用せず ref で管理し、リサイズ時に再レンダリングが発生しないようにしています
 - リサイズ可能であることを分かりやすくするため、ホバー時にバーの色やカーソルを変えています
 - リサイズ (ドラッグ) 中にバーとポインタがずれてもカーソルやホバー時の色が変わらないように、リスナーをドキュメント全体に張るようにしています
+- リサイズ (ドラッグ) 中に各要素中のテキストが選択されないように、リサイズ中のみ `user-select: none` を付与しています
 
 ## 通常表示
 
