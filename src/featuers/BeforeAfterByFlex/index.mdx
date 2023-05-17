@@ -1,0 +1,15 @@
+{/* index.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# BeforeAfterByFlex
+
+before, after を使うときは `position: absolute` が使われることが多いですが、前後の修飾であれば Flex でいいよねと思い試しただけのものです。 <br />
+特筆すべきことはありません。
+
+## 通常表示
+
+<Canvas of={Stories.Default} />
