@@ -1,0 +1,21 @@
+{/* index.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# FlexWrapSortable
+
+Flexbox の wrap で並べた要素を DnD でソートできるようにしたもの。
+react-dnd 等の古めのライブラリでは Flex や Grid で並べたコンポーネントのソートには対応していなかったので、[dnd-kit](https://docs.dndkit.com/) を利用。
+公式の最小サンプルコードに以下の変更を追加。
+
+- 最低限のスタイルを付与
+- TypeScript の型を付与
+- SortingStrategy を変更して Flex や Grid でもアニメーションが効くようにした
+- ドラッグ中の要素を半透明にしてわかりやすくした
+
+## 通常表示
+
+<Canvas of={Stories.Default} />

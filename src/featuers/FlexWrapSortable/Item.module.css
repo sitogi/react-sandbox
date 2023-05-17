@@ -1,0 +1,14 @@
+.item {
+  display: grid;
+  place-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: #eefcfc;
+  border: solid 2px mediumpurple;
+  border-radius: 10px;
+}
+
+.item > p {
+  font-size: 2rem;
+  color: gray;
+}

@@ -1,12 +1,5 @@
-import { CenterPlaced } from '~/featuers/CenterPlaced';
-import { SimpleForm } from '~/featuers/SimpleForm';
+import { FlexWrapSortable } from '~/featuers/FlexWrapSortable';
 
 export function App() {
-  return (
-    <div style={{ width: '100vw', height: '100vh' }}>
-      <CenterPlaced>
-        <SimpleForm />
-      </CenterPlaced>
-    </div>
-  );
+  return <FlexWrapSortable />;
 }

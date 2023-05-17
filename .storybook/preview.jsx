@@ -17,6 +17,7 @@ export const parameters = {
         [
           'HorizontallyResizableLayout',
           'VerticallyResizableLayout',
+          'FlexWrapSortable',
           'ReactGridLayoutDemo',
           'AccordionByDetailsTag',
           'BeforeAfterByFlex',
