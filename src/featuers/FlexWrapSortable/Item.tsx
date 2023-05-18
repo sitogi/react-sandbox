@@ -12,8 +12,7 @@ type Props = {
   listeners?: SyntheticListenerMap | undefined;
 };
 
-// eslint-disable-next-line react/display-name
-export const Item = forwardRef<HTMLDivElement, Props>(({ id, ...props }, ref) => {
+export const Item = forwardRef<HTMLDivElement, Props>(function Item({ id, ...props }, ref) {
   return (
     <div ref={ref} className={styles.item} style={props.style} {...props.attributes} {...props.listeners}>
       <p>{id}</p>
