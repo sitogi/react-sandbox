@@ -1,6 +1,6 @@
 {/* index.mdx */}
 
-import { Canvas, Meta } from '@storybook/blocks';
+import {Canvas, Meta} from '@storybook/blocks';
 import * as HorizontallyResizableLayoutStories from './index.stories';
 
 <Meta of={HorizontallyResizableLayoutStories} />
@@ -30,3 +30,9 @@ import * as HorizontallyResizableLayoutStories from './index.stories';
 コンテナクエリと組み合わせて、リサイズ領域の広さによって内部のコンテンツを書き換えています。
 
 <Canvas of={HorizontallyResizableLayoutStories.WithContainerQuery} />
+
+## WithHeaderLayout と組み合わせる
+
+WithHeaderLayout と組み合わせて、よくある Web アプリのレイアウトを構築しています。
+
+<Canvas of={HorizontallyResizableLayoutStories.WithWithHeaderLayout} />

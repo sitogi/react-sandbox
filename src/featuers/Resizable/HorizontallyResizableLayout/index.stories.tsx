@@ -5,6 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout/index';
 import { QueryContainer } from '~/featuers/Resizable/QueryContainer';
 import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout';
+import { WithHeaderLayout } from '~/featuers/WithHeaderLayout';
 
 export default {
   title: 'Components/HorizontallyResizableLayout',
@@ -43,4 +44,31 @@ export const WithContainerQuery: Story = {
   args: {
     aside: <QueryContainer />,
   },
+};
+
+export const WithWithHeaderLayout: Story = {
+  name: 'WithHeaderLayout と組み合わせる',
+  args: {
+    aside: <VerticallyResizableLayout />,
+  },
+  decorators: [
+    (Story) => (
+      <WithHeaderLayout
+        header={
+          <div
+            style={{
+              display: 'grid',
+              placeContent: 'center',
+              height: '100%',
+              backgroundColor: 'lightpink',
+            }}
+          >
+            <p style={{ fontSize: '2rem' }}>header</p>
+          </div>
+        }
+        content={<Story />}
+        layoutH="100%"
+      />
+    ),
+  ],
 };

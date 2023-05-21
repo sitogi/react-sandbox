@@ -1,0 +1,17 @@
+{/* index.mdx */}
+
+import {Canvas, Meta} from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# WithHeaderLayout
+
+ヘッダーとともに何かを表示する際のレイアウト用コンポーネント。 <br />
+以下の点を工夫しています。
+
+- ヘッダーの高さとそれに伴うコンテンツの高さの計算を隠蔽している
+
+## 通常表示
+
+<Canvas of={Stories.Default} />
