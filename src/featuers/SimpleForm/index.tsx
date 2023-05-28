@@ -15,6 +15,7 @@ export const SimpleForm = (): JSX.Element => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit((data) => console.log(data))}>
