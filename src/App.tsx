@@ -1,15 +1,9 @@
-import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout';
-import { WithHeaderLayout } from '~/featuers/WithHeaderLayout';
+import { NestedSortable } from '~/featuers/NestedSortable';
 
 export function App() {
   return (
-    <WithHeaderLayout
-      header={
-        <div style={{ display: 'grid', placeContent: 'center', height: '100%', borderBottom: 'solid 2px gray' }}>
-          <p style={{ fontSize: '2rem' }}>header</p>
-        </div>
-      }
-      content={<HorizontallyResizableLayout />}
-    />
+    <div style={{ width: '100vw', height: '100vh', display: 'grid', placeContent: 'center' }}>
+      <NestedSortable />
+    </div>
   );
 }
