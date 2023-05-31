@@ -5,6 +5,8 @@ import { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities';
 
 import styles from './Item.module.css';
 
+import { toSplit } from '~/featuers/NestedSortable/utils';
+
 type Props = {
   id: UniqueIdentifier;
   style?: CSSProperties;
@@ -15,7 +17,7 @@ type Props = {
 export const Item = forwardRef<HTMLDivElement, Props>(function Item({ id, ...props }, ref) {
   return (
     <div ref={ref} className={styles.item} style={props.style} {...props.attributes} {...props.listeners}>
-      <p>{id}</p>
+      <p>{toSplit(id).itemId}</p>
     </div>
   );
 });
