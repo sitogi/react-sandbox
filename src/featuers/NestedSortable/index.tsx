@@ -122,8 +122,6 @@ export const NestedSortable = (): JSX.Element => {
         const { containerId: overContainerId, itemId: overItemId } = toSplit(over.id);
 
         if (activeContainerId === overContainerId) {
-          console.log('same container');
-
           if (activeItemId === overItemId) {
             setActiveItemId(null);
             setActiveContainerId(null);
@@ -141,7 +139,37 @@ export const NestedSortable = (): JSX.Element => {
             });
           });
         } else {
-          console.log('other container');
+          const activeTop = active.rect.current.translated?.top;
+          const overTop = over.rect.top;
+
+          setContainers((containers) => {
+            const activeItemContainerIdx = containers.findIndex((c) => c.containerId === activeContainerId);
+            const overContainerIdx = containers.findIndex((c) => c.containerId === overContainerId);
+            const newItems: UniqueIdentifier[] = [];
+            const oldItems = containers[overContainerIdx].items;
+            oldItems.forEach((i) => {
+              if (activeTop !== undefined && i === overItemId) {
+                if (activeTop <= overTop) {
+                  newItems.push(activeItemId);
+                  newItems.push(i);
+                } else {
+                  newItems.push(i);
+                  newItems.push(activeItemId);
+                }
+              } else {
+                newItems.push(i);
+              }
+            });
+
+            console.log(newItems);
+
+            return produce(containers, (draft) => {
+              draft[overContainerIdx].items = newItems;
+              draft[activeItemContainerIdx].items = containers[activeItemContainerIdx].items.filter(
+                (i) => i !== activeItemId,
+              );
+            });
+          });
         }
       }
     }
