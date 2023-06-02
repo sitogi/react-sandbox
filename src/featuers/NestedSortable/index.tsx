@@ -118,23 +118,23 @@ export const NestedSortable = (): JSX.Element => {
       }
     } else {
       if (over != null) {
-        const a = toSplit(active.id);
-        const o = toSplit(over.id);
+        const { containerId: activeContainerId, itemId: activeItemId } = toSplit(active.id);
+        const { containerId: overContainerId, itemId: overItemId } = toSplit(over.id);
 
-        if (a.containerId === o.containerId) {
+        if (activeContainerId === overContainerId) {
           console.log('same container');
 
-          if (a.itemId === o.itemId) {
+          if (activeItemId === overItemId) {
             setActiveItemId(null);
             setActiveContainerId(null);
             return;
           }
 
           setContainers((containers) => {
-            const containerIdx = containers.findIndex((c) => c.containerId === o.containerId);
+            const containerIdx = containers.findIndex((c) => c.containerId === overContainerId);
             const oldItems = containers[containerIdx].items;
-            const oldIndex = oldItems.findIndex((id) => id === a.itemId);
-            const newIndex = oldItems.findIndex((id) => id === o.itemId);
+            const oldIndex = oldItems.findIndex((id) => id === activeItemId);
+            const newIndex = oldItems.findIndex((id) => id === overItemId);
 
             return produce(containers, (draft) => {
               draft[containerIdx].items = arrayMove(oldItems, oldIndex, newIndex);
