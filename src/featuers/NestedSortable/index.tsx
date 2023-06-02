@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { JSX, useState } from 'react';
 
 import {
   closestCenter,
@@ -19,11 +19,9 @@ import { createPortal } from 'react-dom';
 
 import { Container } from './Contaier/Container';
 import { SortableContainer } from './Contaier/SortableContainer';
-
-import { Item } from '~/featuers/NestedSortable/Item/Item';
-
 import styles from './index.module.css';
 
+import { Item } from '~/featuers/NestedSortable/Item/Item';
 import { SortableItem } from '~/featuers/NestedSortable/Item/SortableItem';
 import { toSplit } from '~/featuers/NestedSortable/utils';
 
