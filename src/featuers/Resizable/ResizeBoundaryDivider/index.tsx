@@ -1,9 +1,9 @@
 import styles from './index.module.css';
 
-interface Props {
+type Props = {
   onPointerDown: () => void;
   resizeDirection: 'horizontal' | 'vertical';
-}
+};
 
 export const ResizeBoundaryDivider = ({ onPointerDown, resizeDirection }: Props): JSX.Element => {
   return (

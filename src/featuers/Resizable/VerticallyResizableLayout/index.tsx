@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { JSX, useEffect, useRef } from 'react';
 
 import styles from './index.module.css';
 
@@ -35,10 +35,10 @@ const defaultBottom = (
   </div>
 );
 
-interface Props {
+type Props = {
   up?: JSX.Element;
   bottom?: JSX.Element;
-}
+};
 
 export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBottom }: Props): JSX.Element => {
   const isPointerPressedRef = useRef(false);

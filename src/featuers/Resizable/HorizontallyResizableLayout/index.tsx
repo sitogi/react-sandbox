@@ -37,10 +37,10 @@ const defaultMain = (
   </div>
 );
 
-interface Props {
+type Props = {
   aside?: JSX.Element;
   main?: JSX.Element;
-}
+};
 
 export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defaultMain }: Props): JSX.Element => {
   const isPointerPressedRef = useRef(false);

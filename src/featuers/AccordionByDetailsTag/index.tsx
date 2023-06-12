@@ -4,10 +4,10 @@ import { motion, useAnimation } from 'framer-motion';
 
 import styles from './index.module.css';
 
-interface Props {
+type Props = {
   summaryText: string;
   children: ReactNode;
-}
+};
 
 export const AccordionByDetailsTag = ({ summaryText, children }: Props): JSX.Element => {
   const [detailsOpen, setDetailsOpen] = useState(false);

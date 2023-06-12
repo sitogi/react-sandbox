@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 
-interface Props {
+type Props = {
   header: ReactNode;
   content: ReactNode;
   layoutH?: string;
   headerH?: string;
-}
+};
 
 export function WithHeaderLayout({ header, content, layoutH = '100vh', headerH = '60px' }: Props): JSX.Element {
   return (
