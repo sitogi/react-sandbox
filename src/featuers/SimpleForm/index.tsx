@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 import { useForm } from 'react-hook-form';
 
 import styles from './index.module.css';

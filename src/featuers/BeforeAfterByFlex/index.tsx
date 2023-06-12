@@ -1,10 +1,11 @@
+import { JSX } from 'react';
+
 import styles from './index.module.css';
 
 type Props = {
   decorationGap?: 'gapSm' | 'gapMd' | 'gapLg';
 };
 
-// after (before) 疑似要素を position ではなく display:flex で調整する
 export const BeforeAfterByFlex = ({ decorationGap = 'gapMd' }: Props): JSX.Element => {
   return (
     <div className={`${styles.container} ${styles[decorationGap]}`}>
