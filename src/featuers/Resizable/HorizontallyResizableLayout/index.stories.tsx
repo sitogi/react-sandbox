@@ -2,9 +2,11 @@
 
 import { Meta, StoryObj } from '@storybook/react';
 
+import { defaultAside, defaultMain } from '~/featuers/Resizable/HorizontallyResizableLayout/defaultProps';
 import { HorizontallyResizableLayout } from '~/featuers/Resizable/HorizontallyResizableLayout/index';
 import { QueryContainer } from '~/featuers/Resizable/QueryContainer';
 import { VerticallyResizableLayout } from '~/featuers/Resizable/VerticallyResizableLayout';
+import { defaultBottom, defaultUp } from '~/featuers/Resizable/VerticallyResizableLayout/defaultProps';
 import { WithHeaderLayout } from '~/featuers/WithHeaderLayout';
 
 export default {
@@ -20,6 +22,7 @@ export default {
       </div>
     ),
   ],
+  args: { aside: defaultAside, main: defaultMain },
 } satisfies Meta<typeof HorizontallyResizableLayout>;
 
 type Story = StoryObj<typeof HorizontallyResizableLayout>;
@@ -33,7 +36,7 @@ export const WithVerticallyResizableSidebar: Story = {
   args: {
     aside: (
       <div style={{ height: '500px' }}>
-        <VerticallyResizableLayout />
+        <VerticallyResizableLayout up={defaultUp} bottom={defaultBottom} />
       </div>
     ),
   },
@@ -49,7 +52,7 @@ export const WithContainerQuery: Story = {
 export const WithWithHeaderLayout: Story = {
   name: 'WithHeaderLayout と組み合わせる',
   args: {
-    aside: <VerticallyResizableLayout />,
+    aside: <VerticallyResizableLayout up={defaultUp} bottom={defaultBottom} />,
   },
   decorators: [
     (Story) => (

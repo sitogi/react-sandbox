@@ -7,40 +7,12 @@ import { ResizeBoundaryDivider } from '~/featuers/Resizable/ResizeBoundaryDivide
 const FIRST_AREA_MIN_SIZE = 200;
 const FIRST_AREA_MAX_SIZE = 600;
 
-const defaultUp = (
-  <div
-    style={{
-      display: 'grid',
-      width: '100%',
-      height: '100%',
-      placeContent: 'center',
-      fontSize: '2rem',
-    }}
-  >
-    Up{' '}
-  </div>
-);
-
-const defaultBottom = (
-  <div
-    style={{
-      display: 'grid',
-      width: '100%',
-      height: '100%',
-      placeContent: 'center',
-      fontSize: '2rem',
-    }}
-  >
-    Bottom{' '}
-  </div>
-);
-
 type Props = {
-  up?: JSX.Element;
-  bottom?: JSX.Element;
+  up: JSX.Element;
+  bottom: JSX.Element;
 };
 
-export const VerticallyResizableLayout = ({ up = defaultUp, bottom = defaultBottom }: Props): JSX.Element => {
+export const VerticallyResizableLayout = ({ up, bottom }: Props): JSX.Element => {
   const isPointerPressedRef = useRef(false);
   const resizeTargetRef = useRef<HTMLDivElement>(null);
 

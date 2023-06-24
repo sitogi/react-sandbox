@@ -7,42 +7,12 @@ import { ResizeBoundaryDivider } from '~/featuers/Resizable/ResizeBoundaryDivide
 const ASIDE_MIN_SIZE = 200;
 const ASIDE_MAX_SIZE = 500;
 
-const defaultAside = (
-  <div
-    style={{
-      display: 'grid',
-      width: '100%',
-      height: '100%',
-      placeContent: 'center',
-      fontSize: '2rem',
-      backgroundColor: '#C6F6D5',
-    }}
-  >
-    Aside
-  </div>
-);
-
-const defaultMain = (
-  <div
-    style={{
-      display: 'grid',
-      width: '100%',
-      height: '100%',
-      placeContent: 'center',
-      fontSize: '2rem',
-      backgroundColor: '#E9D8FD',
-    }}
-  >
-    Main
-  </div>
-);
-
 type Props = {
-  aside?: JSX.Element;
-  main?: JSX.Element;
+  aside: JSX.Element;
+  main: JSX.Element;
 };
 
-export const HorizontallyResizableLayout = ({ aside = defaultAside, main = defaultMain }: Props): JSX.Element => {
+export const HorizontallyResizableLayout = ({ aside, main }: Props): JSX.Element => {
   const isPointerPressedRef = useRef(false);
   const asideRef = useRef<HTMLDivElement>(null);
 
