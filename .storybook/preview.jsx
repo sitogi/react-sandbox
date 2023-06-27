@@ -20,6 +20,7 @@ export const parameters = {
           'FlexWrapSortable',
           'ReactGridLayoutDemo',
           'AccordionByDetailsTag',
+          'FadeIn',
           'BeforeAfterByFlex',
           'CheckboxWithAccentColor',
         ],
