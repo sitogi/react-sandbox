@@ -41,6 +41,8 @@ type PersonFormProps = {
   updateField: (id: string, name: string, value: string) => void;
 };
 
+// オブジェクトを渡しているため、memo が効かないと思われがちだが、
+// current.map((p) => (p.id === id ? { ...p, [name]: value } : p)) ではオブジェクトの参照は変わらないため効く
 const PersonForm = memo(function PersonForm({ person, updateField }: PersonFormProps): JSX.Element {
   const { age, id, name } = person;
 
