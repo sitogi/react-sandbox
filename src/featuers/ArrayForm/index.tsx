@@ -22,7 +22,6 @@ export const ArrayForm = (): JSX.Element => {
   const [people, setPeople] = useState<Person[]>(INITIAL_PEOPLE);
 
   const handleUpdateField = useCallback((id: string, name: string, value: string) => {
-    console.log({ id, name, value });
     setPeople((current) => current.map((p) => (p.id === id ? { ...p, [name]: value } : p)));
   }, []);
 
@@ -30,7 +29,7 @@ export const ArrayForm = (): JSX.Element => {
     <div className={styles.container}>
       <div className={styles.formsWrapper}>
         {people.map((p) => (
-          <PersonForm key={p.id} id={p.id} name={p.name} age={p.age} updateField={handleUpdateField} />
+          <PersonForm key={p.id} person={p} updateField={handleUpdateField} />
         ))}
       </div>
     </div>
@@ -38,13 +37,13 @@ export const ArrayForm = (): JSX.Element => {
 };
 
 type PersonFormProps = {
-  id: string;
-  name: string;
-  age: number;
+  person: Person;
   updateField: (id: string, name: string, value: string) => void;
 };
 
-const PersonForm = memo(function PersonForm({ id, name, age, updateField }: PersonFormProps): JSX.Element {
+const PersonForm = memo(function PersonForm({ person, updateField }: PersonFormProps): JSX.Element {
+  const { age, id, name } = person;
+
   return (
     <div className={styles.personWrapper}>
       <VStack>
