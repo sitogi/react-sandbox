@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  border: solid 1px black;
+  border-radius: 4px;
+}
+
+.forms-wrapper {
+  padding: 1rem;
+
+}
+
+.person-wrapper {
+  padding: 2rem;
+  background-color: #e1dede;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.container input {
+  width: 250px;
+  height: 1.6rem;
+  border-radius: 4px;
+}
+
+.container button {
+  width: 100px;
+  height: 1.6rem;
+  margin: 1rem 0 0 auto;
+}
