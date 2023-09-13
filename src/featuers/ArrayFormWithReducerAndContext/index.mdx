@@ -1,0 +1,14 @@
+{/* index.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# ArrayForm
+
+各要素とその値を更新するハンドラを持ったオブジェクトの配列をステートに持つコンポーネントの描画最適化を検討したもの。
+
+## 通常表示
+
+<Canvas of={Stories.Default} />
