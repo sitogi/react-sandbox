@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ArrayFormWithReducerAndContext } from './index';
 
 export default {
-  title: 'Components/ArrayForm',
+  title: 'Components/ArrayFormWithReducerAndContext',
   component: ArrayFormWithReducerAndContext,
   parameters: {
     layout: 'centered',
