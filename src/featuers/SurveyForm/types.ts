@@ -22,9 +22,15 @@ type RadioQuestion = QuestionBase & {
 
 export type Question = TextQuestion | CheckboxQuestion | RadioQuestion;
 
-// 必要になったらこれで型だけの UNION 取れる
-// export type QuestionType = Question extends { type: infer T } ? T : never;
+export type QuestionType = Question extends { type: infer T } ? T : never;
+
+export function getQuestionTypes(): QuestionType[] {
+  // REVISIT: QuestionType の各要素の定義が重複しているが一旦妥協
+  return ['text', 'radio', 'checkbox'];
+}
 
 export type SurveyFormData = {
+  title: string;
+  description: string;
   questions: Question[];
 };

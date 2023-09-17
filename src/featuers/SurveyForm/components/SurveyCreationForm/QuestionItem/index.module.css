@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: solid 1px lightgray;
+  border-left: solid 0.4rem #62acf5;
+  border-radius: 0.4rem;
+  box-shadow: 1px 1px 1px 0 rgb(89 88 88 / 75%);
+}
+
+.question-header {
+  padding-bottom: 0.5rem;
+  border-bottom: solid 1px lightgray;
+}
+
+.text-input {
+  width: 100%;
+}
+
+.type-select {
+  width: 50%;
+}
+
+.question-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: solid 1px lightgray;
+}

@@ -1,4 +1,3 @@
-.container {
-  display: flex;
-  gap: 2rem;
+.text-input {
+  width: 100%;
 }
