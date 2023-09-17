@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.creation-container {
+  width: 600px;
+  padding: 1rem;
+  border: solid 1px;
+  border-radius: 4px;
+}
+
+.preview-container {
+  width: 600px;
+  padding: 1rem;
+  border: solid 1px;
+  border-radius: 4px;
+}
+

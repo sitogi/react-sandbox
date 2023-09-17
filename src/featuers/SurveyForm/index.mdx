@@ -1,0 +1,14 @@
+{/* index.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Survey Form
+
+Google Form のような動的に追加やソートなどができるフォームでのレンダリング最適化を素振りする。
+
+## 通常表示
+
+<Canvas of={Stories.Default} />
