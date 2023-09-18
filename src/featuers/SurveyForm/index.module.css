@@ -9,15 +9,17 @@
 
 .creation-container {
   width: 600px;
-  padding: 1rem;
-  border: solid 1px;
-  border-radius: 4px;
+  padding: 3rem;
+  overflow-y: auto;
+  border: solid 2px darkgray;
+  border-radius: 6px;
 }
 
 .preview-container {
   width: 600px;
-  padding: 1rem;
-  border: solid 1px;
-  border-radius: 4px;
+  padding: 3rem;
+  overflow-y: auto;
+  border: solid 2px darkgray;
+  border-radius: 6px;
 }
 

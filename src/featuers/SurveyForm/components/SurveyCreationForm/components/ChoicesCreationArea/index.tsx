@@ -20,7 +20,6 @@ export function ChoicesCreationArea({ register, control, questionIndex }: Props)
 
   return (
     <div className={styles.container}>
-      <span>ラジオボタンの選択肢:</span>
       <ul className={styles.radioList}>
         {fields.map((field, index) => (
           <li className={styles.radioListItem} key={field.id}>
@@ -29,7 +28,7 @@ export function ChoicesCreationArea({ register, control, questionIndex }: Props)
               <input
                 type="text"
                 className={styles.textInput}
-                {...register(`questions.${questionIndex}.choices.${index}.choiceText`)}
+                {...register(`questions.${questionIndex}.choices.${index}.choiceText`, { required: true })}
               />
               <button onClick={() => remove(index)}>削除</button>
             </label>
@@ -37,7 +36,7 @@ export function ChoicesCreationArea({ register, control, questionIndex }: Props)
         ))}
       </ul>
       <div>
-        <button type="button" onClick={() => append({ choiceText: '新しいラジオボタン' })}>
+        <button type="button" onClick={() => append({ choiceText: '' })}>
           新しい選択肢を追加
         </button>
       </div>

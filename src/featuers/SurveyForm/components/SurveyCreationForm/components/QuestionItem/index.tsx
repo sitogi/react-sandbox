@@ -22,7 +22,7 @@ export function QuestionItem({ register, control, index, removeQuestion }: Props
       </div>
       <label>
         <span>質問のタイトル:</span>
-        <input type="text" className={styles.textInput} {...register(`questions.${index}.title`)} />
+        <input type="text" className={styles.textInput} {...register(`questions.${index}.title`, { required: true })} />
       </label>
       <label>
         <p>質問の形式:</p>
