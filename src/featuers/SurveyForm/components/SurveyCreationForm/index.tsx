@@ -2,7 +2,7 @@ import { JSX } from 'react';
 
 import { useFieldArray, useForm } from 'react-hook-form';
 
-import { QuestionItem } from '~/featuers/SurveyForm/components/SurveyCreationForm/QuestionItem';
+import { QuestionItem } from '~/featuers/SurveyForm/components/SurveyCreationForm/components/QuestionItem';
 import { SurveyFormData } from '~/featuers/SurveyForm/types';
 import { VStack } from '~/featuers/VStack';
 
@@ -16,7 +16,6 @@ export function SurveyCreationForm(): JSX.Element {
         {fields.map((field, index) => (
           <QuestionItem
             key={field.id}
-            question={field}
             register={register}
             control={control}
             index={index}

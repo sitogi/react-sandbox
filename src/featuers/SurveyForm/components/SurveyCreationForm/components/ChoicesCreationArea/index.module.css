@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.radio-list {
+  :not(:first-child) {
+    margin-top: 0.2rem;
+  }
+}
+
+.radio-list-item {
+  width: 70%;
+  list-style-type: none;
+}
+
+.item-input {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+
+  > span {
+    flex: 0 0 70px;
+  }
+
+  > input {
+    flex: 1 1;
+  }
+
+  > button {
+    flex: 0 0 70px;
+  }
+}
+

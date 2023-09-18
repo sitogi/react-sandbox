@@ -15,7 +15,7 @@ type CheckboxQuestion = QuestionBase & {
   choices: Choice[];
 };
 
-type RadioQuestion = QuestionBase & {
+export type RadioQuestion = QuestionBase & {
   type: 'radio';
   choices: Choice[];
 };
