@@ -4,11 +4,11 @@ import { Control, useFieldArray, UseFormRegister } from 'react-hook-form';
 
 import styles from './index.module.css';
 
-import { SurveyFormData } from '~/featuers/SurveyForm/types';
+import { SurveyPerticipantFormData } from '~/featuers/SurveyForm/types';
 
 type Props = {
-  register: UseFormRegister<SurveyFormData>;
-  control: Control<SurveyFormData>;
+  register: UseFormRegister<SurveyPerticipantFormData>;
+  control: Control<SurveyPerticipantFormData>;
   questionIndex: number;
 };
 
@@ -17,8 +17,6 @@ export function ChoicesCreationArea({ register, control, questionIndex }: Props)
     control,
     name: `questions.${questionIndex}.choices` as 'questions.0.choices',
   });
-
-  console.log(fields.map((f) => f.id));
 
   return (
     <div className={styles.container}>

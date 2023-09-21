@@ -1,4 +1,5 @@
 type QuestionBase = {
+  id: string;
   title: string;
 };
 
@@ -34,3 +35,5 @@ export type SurveyFormData = {
   description: string;
   questions: Question[];
 };
+
+export type SurveyPerticipantFormData = Omit<SurveyFormData, 'title' | 'description'>;

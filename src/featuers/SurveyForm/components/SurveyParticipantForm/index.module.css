@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header-container {
+  display: flex;
+  flex: 0 0;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: solid 1px lightgray;
+  border-top: solid 0.4rem #7364f5;
+  border-radius: 0.4rem;
+  box-shadow: 1px 1px 1px 0 rgb(89 88 88 / 75%);
+}
+
+.text-input {
+  width: 100%;
+}
+
+.survey-title {
+  font-size: 2rem;
+}
+
+.question-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.survey-footer-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}

@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 import { useFieldArray, useForm } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
 
 import styles from './index.module.css';
 
@@ -43,7 +44,7 @@ export function SurveyCreationForm({ initialData, onSubmit }: Props): JSX.Elemen
             />
           ))}
           <div>
-            <button type="button" onClick={() => append({ type: 'text', title: '' })}>
+            <button type="button" onClick={() => append({ id: uuidv4(), type: 'text', title: '' })}>
               質問を追加する
             </button>
           </div>
