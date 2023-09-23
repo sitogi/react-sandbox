@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 // https://vitejs.dev/config/
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
+  server: {
+    open: true,
+  },
   plugins: [react()],
   resolve: {
     alias: {
