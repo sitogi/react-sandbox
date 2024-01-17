@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ZustandDemo } from './index';
 
 export default {
-  title: 'Components/SurveyForm',
+  title: 'Components/ZustandDemo',
   component: ZustandDemo,
   parameters: {
     layout: 'centered',
