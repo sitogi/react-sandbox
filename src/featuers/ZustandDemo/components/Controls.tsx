@@ -1,4 +1,4 @@
-import { JSX, memo } from 'react';
+import { JSX, memo, useEffect, useRef } from 'react';
 
 import styles from '~/featuers/ZustandDemo/index.module.css';
 import { useBoardStore } from '~/featuers/ZustandDemo/store';
@@ -17,11 +17,12 @@ export function NameInput(): JSX.Element {
 
 export function CardList(): JSX.Element {
   console.log('render CardList');
-  const ids = useBoardStore((state) => state.cards.map((card) => card.id));
+  const scratchRef = useRef(useBoardStore.getState().cards.map((card) => card.id));
+  useEffect(() => useBoardStore.subscribe((state) => (scratchRef.current = state.cards.map((card) => card.id))), []);
 
   return (
     <div className={styles.cards}>
-      {ids.map((id) => (
+      {scratchRef.current.map((id) => (
         <MemorizedCard key={id} id={id} />
       ))}
     </div>
